@@ -3,7 +3,7 @@ version: "3.8"
 
 volumes:
   wordpress:
-    name: wordpres
+    name: wordpress
     driver: local
     driver_opts:
       type: none
@@ -71,5 +71,3 @@ services:
       - mariadb:/var/lib/mysql
     env_file: .env
     restart: on-failure
-    expose:
-      - 3306
