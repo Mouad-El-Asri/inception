@@ -1,6 +1,6 @@
 DOCKER_COMPOSE_FILE = ./srcs/docker-compose.yml
 
-UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up -d
+UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up 
 DOWN = docker-compose -f $(DOCKER_COMPOSE_FILE) down -v
 START = docker-compose -f $(DOCKER_COMPOSE_FILE) start
 PS = docker-compose -f $(DOCKER_COMPOSE_FILE) ps
@@ -22,6 +22,14 @@ status:
 
 stop:
 	$(STOP)
+
+fclean:
+	@printf "Total clean of all configurations docker\n"
+	@docker stop $$(docker ps -qa)
+	@docker system prune --all --force --volumes
+	@docker network prune --force
+	@docker volume prune --force
+
 
 .PHONY: all up down start status stop
 

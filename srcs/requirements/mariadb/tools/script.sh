@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service mysql start;
+service mysql start
 
 mariadb -u root -e "
 CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
