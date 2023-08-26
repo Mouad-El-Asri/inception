@@ -23,4 +23,13 @@ status:
 stop:
 	$(STOP)
 
+clean: down
+	docker system prune --all --force
+	rm -rf /home/moel-asr/data/wordpress/*
+	rm -rf /home/moel-asr/data/mariadb/*
+
+fclean: clean
+	docker network prune --force
+	docker volume prune --force
+
 .PHONY: all up down start status stop
