@@ -8,7 +8,7 @@ rm -rf *
 
 wp core download --allow-root
 
-#mv wp-config-sample.php wp-config.php
+mv wp-config-sample.php wp-config.php
 
 wp core config --dbname=${MYSQL_DATABASE} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD} --dbhost=${DB_HOST} --allow-root
 
@@ -17,5 +17,3 @@ wp core install --url=${DOMAIN_NAME} --title=${WORDPRESS_TITLE} --admin_user=${W
 wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PWD --allow-root
 
 php-fpm -F -R
-
-#exec $@
