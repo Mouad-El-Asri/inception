@@ -10,12 +10,8 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY ./tools/script.sh /
 
-#COPY ./tools/wp-config.php /
-
 RUN chmod +x script.sh
 
 RUN mkdir /run/php
 
-ENTRYPOINT ["sh", "script.sh"]
-
-CMD ["php-fpm", "-R", "-F"]
+CMD ["sh", "script.sh"]

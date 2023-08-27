@@ -1,6 +1,6 @@
 DOCKER_COMPOSE_FILE = ./srcs/docker-compose.yml
 
-UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up -d
+UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up
 DOWN = docker-compose -f $(DOCKER_COMPOSE_FILE) down -v
 START = docker-compose -f $(DOCKER_COMPOSE_FILE) start
 PS = docker-compose -f $(DOCKER_COMPOSE_FILE) ps
@@ -25,8 +25,8 @@ stop:
 
 clean: down
 	docker system prune --all --force
-	rm -rf /home/moel-asr/data/wordpress/*
-	rm -rf /home/moel-asr/data/mariadb/*
+	sudo rm -rf /home/moel-asr/data/wordpress/*
+	sudo rm -rf /home/moel-asr/data/mariadb/*
 
 fclean: clean
 	docker network prune --force
