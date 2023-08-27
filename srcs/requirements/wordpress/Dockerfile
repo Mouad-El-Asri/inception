@@ -10,8 +10,12 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY ./tools/script.sh /
 
+COPY ./tools/www.conf /etc/php/7.3/fpm/pool.d/
+
 RUN chmod +x script.sh
 
 RUN mkdir /run/php
 
-CMD ["sh", "script.sh"]
+ENTRYPOINT ["sh", "script.sh"]
+
+CMD ["php-fpm7.3", "-R", "-F"]

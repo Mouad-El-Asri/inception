@@ -10,10 +10,16 @@ wp core download --allow-root
 
 mv wp-config-sample.php wp-config.php
 
-wp core config --dbname=${MYSQL_DATABASE} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD} --dbhost=${DB_HOST} --allow-root
+sed -i -r "s/database_name_here/$DB_NAME/1"   wp-config.php
+
+sed -i -r "s/username_here/$DB_USER/1"  wp-config.php
+
+sed -i -r "s/password_here/$DB_PASSWORD/1"    wp-config.php
+
+sed -i -r "s/localhost/$DB_HOST/1"    wp-config.php
 
 wp core install --url=${DOMAIN_NAME} --title=${WORDPRESS_TITLE} --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PW} --admin_email=${WORDPRESS_ADMIN_EMAIL} --skip-email --allow-root
 
 wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PWD --allow-root
 
-php-fpm -F -R
+exec "$@"

@@ -27,8 +27,6 @@ clean: down
 	docker system prune --all --force
 	sudo rm -rf /home/moel-asr/data/wordpress/*
 	sudo rm -rf /home/moel-asr/data/mariadb/*
-
-fclean: clean
 	docker network prune --force
 	docker volume prune --force
 
