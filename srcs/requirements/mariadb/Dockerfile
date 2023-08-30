@@ -10,6 +10,4 @@ RUN chmod +x script.sh
 
 ARG DB_HOST DB_NAME DB_USER DB_PASSWORD DB_ROOT_PASSWORD
 
-RUN service mysql start &&  ./script.sh
-
-CMD ["mysqld"]
+CMD ["./script.sh"]

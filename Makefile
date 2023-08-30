@@ -1,6 +1,6 @@
 DOCKER_COMPOSE_FILE = ./srcs/docker-compose.yml
 
-UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up
+UP = docker-compose -f $(DOCKER_COMPOSE_FILE) up -d
 DOWN = docker-compose -f $(DOCKER_COMPOSE_FILE) down -v
 START = docker-compose -f $(DOCKER_COMPOSE_FILE) start
 PS = docker-compose -f $(DOCKER_COMPOSE_FILE) ps

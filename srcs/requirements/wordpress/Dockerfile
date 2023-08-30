@@ -16,6 +16,4 @@ RUN chmod +x script.sh
 
 RUN mkdir /run/php
 
-ENTRYPOINT ["sh", "script.sh"]
-
-CMD ["php-fpm7.3", "-R", "-F"]
+CMD ["./script.sh"]

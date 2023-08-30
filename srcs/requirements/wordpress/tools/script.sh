@@ -20,6 +20,8 @@ sed -i -r "s/localhost/$DB_HOST/1"    wp-config.php
 
 wp core install --url=${DOMAIN_NAME} --title=${WORDPRESS_TITLE} --admin_user=${WORDPRESS_ADMIN_USER} --admin_password=${WORDPRESS_ADMIN_PW} --admin_email=${WORDPRESS_ADMIN_EMAIL} --skip-email --allow-root
 
-wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PWD --allow-root
+wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PW --allow-root
+
+php-fpm7.3 -R -F
 
 exec "$@"
