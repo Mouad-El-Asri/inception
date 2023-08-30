@@ -10,4 +10,6 @@ RUN chmod +x script.sh
 
 ARG DB_HOST DB_NAME DB_USER DB_PASSWORD DB_ROOT_PASSWORD
 
-CMD ["./script.sh"]
+RUN /script.sh
+
+CMD ["mysqld"]

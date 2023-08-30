@@ -10,4 +10,4 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '${DB_ROOT_PASSWORD}';
 FLUSH PRIVILEGES;
 "
 
-mysqld
+exec "@%"
