@@ -1,0 +1,8 @@
+# Temporary and Build Files
+.DS_Store
+*.swp
+
+# Sensitive Information
+.env
+*.crt
+*.key
