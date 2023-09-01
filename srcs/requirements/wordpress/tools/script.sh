@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 24
+
 mkdir -p /var/www/html/wordpress
 
 cd /var/www/html/wordpress
