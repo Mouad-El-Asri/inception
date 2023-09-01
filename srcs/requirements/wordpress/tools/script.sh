@@ -22,6 +22,4 @@ wp core install --url=${DOMAIN_NAME} --title=${WORDPRESS_TITLE} --admin_user=${W
 
 wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PW --allow-root
 
-php-fpm7.3 -R -F
-
-exec "$@"
+php-fpm7.4 -R -F
